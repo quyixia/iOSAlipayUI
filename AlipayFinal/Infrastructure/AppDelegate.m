@@ -28,7 +28,7 @@
     }
    
     //刚进入的时候还没有view呢！
-    [self.window addSubview:self.window.rootViewController.view];
+//    [self.window addSubview:self.window.rootViewController.view];
     //设置splashVC，显示splashVC.view。不使用其他splashVC的功能
     self.splashViewController=[[UIViewController alloc]init];
     NSString * splashImageName=@"splash.jpg";
@@ -37,7 +37,11 @@
     }
     self.splashViewController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:splashImageName]];
     //把splashVC添加进去
-    [self.window addSubview:self.splashViewController.view];
+//    [self.window addSubview:self.splashViewController.view];
+    
+    UIViewController *vc = self.window.rootViewController;
+    [vc.view addSubview:self.splashViewController.view];
+    
     //⬇️ 让splashimage显示2s，让用户看一眼得了。
     [self performSelector:@selector(splashAnimate:) withObject:@0.0 afterDelay:2.0];
     return YES; 

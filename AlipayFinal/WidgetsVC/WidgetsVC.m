@@ -26,10 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
     //判断显示那个view
     if ([self.whichViewToPresent isEqualToString:@"loginView"]) {
         [self showLoginView];
